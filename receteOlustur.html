@@ -1,36 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
+
 <head>
-    <meta charset="utf-8" />
-    <title>DRKS - Reçete Oluştur</title>
-    <!-- <link rel="icon" href="IMAGES/" type="image/x-icon" /> -->
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçete Takip Sistemi Reçete Oluştur</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="js/chatbox.js" defer></script>
+    <link rel="stylesheet" href="styles/chatbox.css">
 </head>
+
 <body>
-    <!-- Şablon Halinde Top İçeriği -->
-    <div class="topContent">
-        <script>
-            // Fetch API Kullanarak top.html İçeriğini Alıyoruz
-            fetch('top.html')
-                .then(response => response.text())
-                .then(data => {
-                    // Aldığımız HTML İçeriğini top-content div'inin İçine Ekliyoruz
-                    document.querySelector('.topContent').innerHTML = data;
-
-                    // script.js Dosyasını Çağır
-                    var script = document.createElement('script');
-                    script.src = 'js/script.js';
-                    document.body.appendChild(script);
-                })
-                .catch(error => console.error('Hata:', error));
-        </script>
+    <!-- chatbox -->
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Yapay Zeka</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Merhaba 👋<br>Nasıl yardımcı olabilirim?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Mesaj yazın..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
     </div>
+    <!-- chatbox -->
+    <nav id="sidebar" class="sidebar close">
+        <div class="close1">
+            <i class="fa-solid fa-x" id="x" onclick="close1()"></i>
+        </div>
+        <header>
+            <div class="image-text">
+                <div class="text logo-text">
+                    <span class="name">Prof. Dr. Ahmet Acar</span>
+                    <span class="profession">Kardiyoloji</span>
+                </div>
+            </div>
+        </header>
 
-    <!-- Ana İçerik -->
-    
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Ana Sayfa</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/receteOlustur.html">
+                            <i class="icon fa-solid fa-pen-to-square"></i>
+
+                            <span class="text nav-text">Reçete Oluştur</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/receteSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Reçete Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/randevuAl.html">
+                            <i class="icon fa-solid fa-calendar-days"></i>
+                            <span class="text nav-text">Randevu Al</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/randevuSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Randevu Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/ilacListesi.html">
+                            <i class="icon fa-solid fa-list"></i>
+                            <span class="text nav-text">İlaç Listesi</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/raporSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Rapor Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Çıkış yap</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="main-header">
+            <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
+            <div class="headertext">
+                <img src="images/logo.png" alt="">
+                <h1>Reçete Takip Sistemi Reçete Oluştur</h1>
+            </div>
+        </div>
+
+        <!-- Kodun yazılacağı yer -->
+
+    </section>
+    <script src="js/menu.js"></script>
 </body>
+
 </html>
