@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Kullanıcının mesajını saklamak için değişken
-const API_KEY = "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"; // API anahtarını buraya yapıştırın
+const API_KEY = "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"; // API anahtarını buraya yapıştırın
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -30,7 +30,7 @@ const generateResponse = (chatElement) => {
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "gpt-4",
+            model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: userMessage }],
         })
     }
