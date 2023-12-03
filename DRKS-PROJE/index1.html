@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reçete Takip Sistemi</title>
+    <title>Reçete Takip Sistemi Ana Sayfa</title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/index.css">
 </head>
@@ -20,7 +21,7 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr Ahmet Acar</span>
+                    <span class="name">Prof. Dr. Ahmet Acar</span>
                     <span class="profession">Kardiyoloji</span>
                 </div>
             </div>
@@ -98,28 +99,16 @@
     <section class="home">
         <div class="main-header">
             <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
-            Reçete Takip Sistemi
+            <div class="headertext">
+                <img src="images/logo.png" alt="">
+                <h1>Reçete Takip Sistemi Ana Sayfa</h1>
+            </div>
         </div>
-        
+
+        <!-- Kodun yazılacağı yer -->
+
     </section>
-    <script>
-        function open1() {
-            const hamburger = document.getElementById("hamburger");
-            const x = document.getElementById("x");
-            x.style.display = "block";
-            hamburger.style.display = "none";
-            document.getElementById("sidebar").style.left = "0px";
-
-        }
-        function close1() {
-            const x = document.getElementById("x");
-            const hamburger = document.getElementById("hamburger");
-            x.style.display = "none";
-            hamburger.style.display = "block";
-            document.getElementById("sidebar").style.left = "-250px";
-
-        }
-    </script>
+    <script src="js/menu.js"></script>
 
 </body>
 
