@@ -11,9 +11,37 @@
     <title>Reçete Takip Sistemi Ana Sayfa</title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="js/chatbox.js" defer></script>
+    <link rel="stylesheet" href="styles/chatbox.css">
 </head>
 
 <body>
+    <!-- chatbox -->
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Yapay Zeka</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Merhaba 👋<br>Nasıl yardımcı olabilirim?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Mesaj yazın..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+    </div>
+    <!-- chatbox -->
     <nav id="sidebar" class="sidebar close">
         <div class="close1">
             <i class="fa-solid fa-x" id="x" onclick="close1()"></i>
