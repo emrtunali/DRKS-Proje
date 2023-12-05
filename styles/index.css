@@ -168,7 +168,7 @@ body.dark .sidebar li a:hover .text {
     top: 0;
     left: 250px;
     width: calc(100% - 250px);
-    background-color: var(--body-color);
+    background-color: white;
 
 }
 
@@ -249,9 +249,21 @@ i:hover {
         left: -250px;
     }
 
+    .prescriptionDrugArea{
+        display: block;
+    }
+
     .home {
         width: 100%;
         left: 0;
+    }
+
+    .prescriptionInformation{
+        display: block;
+    }
+
+    .pageRightWindow{
+        width: 100%;
     }
 
     #hamburger {
@@ -278,6 +290,7 @@ i:hover {
     .headertext {
         margin-left: 0px;
     }
+    
 }
 
 @media only screen and (max-width: 420px) {
@@ -294,4 +307,99 @@ i:hover {
     .headertext {
         margin-left: 0px;
     }
+}
+
+.pageRightWindow {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 15px;
+    height: 47rem;
+
+}
+
+.pageRightWindowInnerLine{
+    background: white;
+    border: 1px solid rgb(177, 177, 177);
+    height: 100%;
+    padding: 20px;
+}
+
+.createPrescriptionArea{
+    display: flex;
+    position: relative;
+}
+.pageRightWindowInnerLine h3{
+   margin-left: 15px;
+   color: #707070;
+}
+.createPrescriptionArea a{
+    padding: 10px;
+    margin-top: -10px;
+    position: absolute;
+    right: 0;
+    background-color: #2196F3;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+}
+.pageRightWindowInnerLine i{
+    color: #2196f3;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.readOnly{
+    width: 350px;
+    font-size: 20px;
+    padding: 3px;
+    border-color: #2196F3;
+}
+.prescriptionInformation{
+    display: flex;
+    justify-content: space-evenly;
+}
+.prescriptionDrugInfoArea{
+    margin-top: 40px;
+}
+.prescriptionDrugInfoArea i{
+    float: left;
+}
+.prescriptionDrugInfoArea h3{
+    margin-left: 40px;
+}
+
+.prescriptionDrugArea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.drugInputs{
+    width: 200px;
+    font-size: 20px;
+    padding: 3px;
+    border-color: #2196F3;
+}
+.prescriptionPatientInfoArea{
+    margin-top: 40px;
+}
+.prescriptionPatientInfoArea i{
+    float: left;
+}
+.prescriptionPatientInfoArea h3{
+    margin-left: 40px;
+}
+
+.prescriptionPatientArea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.patientInputs{
+    width: 200px;
+    font-size: 20px;
+    padding: 3px;
+    border-color: #2196F3;
+}
+.patientComplaint{
+    margin-top: 40px;
 }

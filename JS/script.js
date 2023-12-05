@@ -54,5 +54,3 @@ logoutButton.addEventListener('click', function () {
     logoutButton.style.display = 'none';
     loginButton.style.display = 'inline-block';
 });
-
-

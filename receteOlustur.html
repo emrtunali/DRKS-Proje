@@ -17,6 +17,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <script src="js/chatbox.js" defer></script>
     <link rel="stylesheet" href="styles/chatbox.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="JS/script.js">
 </head>
 
 <body>
@@ -133,9 +135,98 @@
             </div>
         </div>
 
-        <!-- Kodun yazılacağı yer -->
+        <div class="pageRightWindow">
+            <div class="pageRightWindowInnerLine">
+                <div class="createPrescriptionArea">
+                    <i class="fa-solid fa-pencil"></i>
+                    <h3>Reçete Bilgisi</h3>
+                    <a href="#" onclick="save()">
+                        <i class="fa-solid fa-check"></i>
+                        Reçeteyi Kaydet
+                    </a>
+                </div> 
+                <hr style="margin-top: 20px;">
+                <br>
+                <div class="prescriptionInformation">
+                    <section class="createPrescriptionAreas">
+                        <h5>Reçete Numarası</h5>
+                        <input type="text" id="prescriptionId" class="readOnly" value="123456" readonly>
+                    </section>
+                    <section class="createPrescriptionAreas">
+                        <h5>Reçeteyi Oluşturan</h5>
+                        <input type="text" id="writtenPersonId" class="readOnly" value="Prof. Dr. Ahmet Acar" readonly>
+                    </section>
+                    <section class="createPrescriptionAreas">
+                        <h5>Klinik</h5>
+                        <input type="text" id="clinicId" class="readOnly" value="Kardiyoloji" readonly>
+                    </section>
+                    <section class="createPrescriptionAreas">
+                        <h5>Reçete Tarihi</h5>
+                        <input type="datetime" id="prescriptionDate" class="readOnly" value="05.12.2023 14:30" readonly>
+                    </section>
+                </div>
 
+                <div class="prescriptionDrugInfoArea">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h3>İlaç Bilgisi</h3>
+                </div> 
+                <hr style="margin-top: 20px;">
+                <br>
+                <div class="prescriptionDrugArea">
+                    <section class="prescriptionDrug">
+                        <h5>&nbsp;</h5>
+                        <input type="search" id="selectDrugName" class="drugInputs" placeholder="İlaç Adı Arayın" style="width: 400px;">
+                    </section>
+                    <section class="prescriptionDrug">
+                        <h5>İlaç Adı</h5>
+                        <input type="text" id="drugName" class="drugInputs" value="PAROL PAROL PAROL PAROL PAROL" style="width: 400px;" readonly>
+                    </section>
+                    <section class="prescriptionDrug">
+                        <h5>Önerilen Doz Miktarı</h5>
+                        <input type="text" id="drugRecommendedDose" class="drugInputs" value="3" readonly>
+                    </section>
+                    <section class="prescriptionDrug">
+                        <h5>Yazılacak Doz Miktarı Girin</h5>
+                        <input type="number" id="drugUsePurpose" class="drugInputs" value="3">
+                    </section>
+                    <section class="prescriptionDrug">
+                        <h5>İlaç Fiyatı</h5>
+                        <input type="text" id="drugPrice" class="drugInputs" value="50" readonly>
+                    </section>
+                </div>
+
+                <div class="prescriptionPatientInfoArea">
+                    <i class="fa-solid fa-user"></i>
+                    <h3>Hasta Bilgisi</h3>
+                </div> 
+                <hr style="margin-top: 20px;">
+                <br>
+                <div class="prescriptionPatientArea">
+                    <section class="prescriptionPatient">
+                        <h5>Hasta Adı Soyadı</h5>
+                        <input type="text" id="patientNameSurname" class="patientInputs" value="Serhat Kaya" style="width: 400px;" readonly>
+                    </section>
+                    <section class="prescriptionPatient">
+                        <h5>Hasta Yaşı</h5>
+                        <input type="text" id="patientAge" class="patientInputs" value="19" readonly>
+                    </section>
+                    <section class="prescriptionPatient">
+                        <h5>Hasta TC Kimlik Numarası</h5>
+                        <input type="number" id="patientIdentificationNumber" class="patientInputs" value="26781934246">
+                    </section>
+                    
+                </div>
+                <section class="patientComplaint" style="margin-left: 10%;">
+                    <h5>Hasta Şikayeti</h5>
+                    <input type="text" id="patientComplaintText" class="patientInputs"
+                         value="Bu sefer son, bitecek. Her gün olduğu gibi, bitmiyor. Bu sefer son, bitecek." style="width: 90%;" readonly>
+                </section>
+            </div>
+        </div>
+
+        <!-- Kodun yazılacağı yer -->
     </section>
+
     <script src="js/menu.js"></script>
 </body>
 
