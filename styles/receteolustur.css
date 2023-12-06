@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1500px;
 }
 
 .presInfo {
@@ -65,7 +66,7 @@
 .presMain {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
 }
@@ -75,6 +76,7 @@
     flex-direction: column;
     width: 400px;
     height: 100px;
+    margin: 0px 0px;
 }
 
 .input label {
@@ -93,6 +95,20 @@
 }
 
 .presInput:focus {
+
+    border-bottom: 2px solid #0056b3;
+}
+
+.plaint {
+    width: 400px;
+    height: 120px;
+    outline: none;
+    border: 1px solid #707070;
+    border-bottom: 2px solid #2196F3;
+    transition: 200ms;
+}
+
+.plaint:focus {
 
     border-bottom: 2px solid #0056b3;
 }

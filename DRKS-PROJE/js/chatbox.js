@@ -29,7 +29,7 @@ const generateResponse = (chatElement) => {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${API_KEY}`
         },
-        body: JSON.stringify({
+        body: jsON.stringify({
             model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: userMessage }],
         })
