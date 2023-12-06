@@ -18,7 +18,7 @@
     <script src="js/chatbox.js" defer></script>
     <link rel="stylesheet" href="styles/chatbox.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="JS/script.js">
+    <link rel="stylesheet" href="js/script.js">
     <link rel="stylesheet" href="styles/receteolustur.css">
 </head>
 
@@ -30,7 +30,7 @@
     </button>
     <div class="chatbot">
         <header>
-            <h2>Yapay Zeka</h2>
+            <h2>Sağlık Asistanım</h2>
             <span class="close-btn material-symbols-outlined">close</span>
         </header>
         <ul class="chatbox">
@@ -63,14 +63,14 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/index.html">
+                        <a href="index.html">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Ana Sayfa</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/receteOlustur.html">
+                        <a href="receteOlustur.html">
                             <i class="icon fa-solid fa-pen-to-square"></i>
 
                             <span class="text nav-text">Reçete Oluştur</span>
@@ -78,35 +78,41 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/receteSorgula.html">
+                        <a href="receteSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
                             <span class="text nav-text">Reçete Sorgula</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/randevuAl.html">
+                        <a href="randevuAl.html">
                             <i class="icon fa-solid fa-calendar-days"></i>
                             <span class="text nav-text">Randevu Al</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/randevuSorgula.html">
+                        <a href="randevuSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
                             <span class="text nav-text">Randevu Sorgula</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="/ilacListesi.html">
+                        <a href="ilacListesi.html">
                             <i class="icon fa-solid fa-list"></i>
                             <span class="text nav-text">İlaç Listesi</span>
                         </a>
                     </li>
+                    <li class="nav-link">
+                        <a href="raporOlustur.html">
+                            <i class="icon fa-solid fa-paperclip"></i>
+                            <span class="text nav-text">Rapor Oluştur</span>
+                        </a>
+                    </li>
 
                     <li class="nav-link">
-                        <a href="/raporSorgula.html">
+                        <a href="raporSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
                             <span class="text nav-text">Rapor Sorgula</span>
                         </a>
@@ -153,25 +159,113 @@
                 </div>
 
                 <div class="presMain">
-                <div class="input">
-                <label for="">Reçete Tarihi</label>
-                <input  class="presInput" type="date">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">Reçete Tarihi</label>
+                            <input class="presInput" type="date">
+                        </div>
+                        <div class="input">
+                            <label for="">Reçete No</label>
+                            <input class="presInput" type="text">
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">Reçeteyi Oluşturan</label>
+                            <input class="presInput" type="text">
+                        </div>
+
+                        <div class="input">
+                            <label for="">Klinik</label>
+                            <input class="presInput" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="input">
-                <label for="">Reçete No</label>
-                <input class="presInput" type="text">
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-regular fa-user"></i>
+                        <h2>Hasta Bilgisi</h2>
+                    </div>
+
+                </div>
+
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">Hasta Adı Soyadı</label>
+                            <input class="presInput" type="text">
+                        </div>
+                        <div class="input">
+                            <label for="">Hasta TC No</label>
+                            <input class="presInput" type="text">
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">Hasta Yaşı</label>
+                            <input class="presInput" type="text">
+                        </div>
+
+                        <div class="input">
+                            <label for="">Hasta Şikayeti</label>
+                            <textarea class="plaint" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="input">
-                <label for="">Reçeteyi Oluşturan</label>
-                <input class="presInput" type="text">
+
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-solid fa-capsules"></i>
+                        <h2>İlaç Bilgisi</h2>
+                    </div>
+
+                </div>
+
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">İlaç Adı</label>
+                            <input class="presInput" list="ilac">
+                            <datalist id="ilac">
+                                <option value="Parol">
+                                <option value="Arveles">
+                                <option value="Aspirin">
+                                <option value="Lustral">
+                                <option value="Panadol">
+                                <option value="Fermara">
+                            </datalist>
+                        </div>
+                        <div class="input">
+                            <label for="">Önerilen Doz</label>
+                            <input class="presInput" type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="">Yazılacak Doz</label>
+                            <input class="presInput" type="text">
+                        </div>
+
+                        <div class="input">
+                            <label for="">İlaç Fiyatı</label>
+                            <input class="presInput" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-           
-            <div class="input">
-                <label for="">Klinik</label>
-                <input class="presInput" type="text">
-            </div>
-        </div>
-            </div>
+
         </div>
 
 
