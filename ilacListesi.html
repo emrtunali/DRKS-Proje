@@ -22,6 +22,10 @@
 </head>
 
 <body>
+    <div class="info" id="info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <div id="text"></div>
+    </div>
     <!-- chatbox -->
     <button class="chatbot-toggler">
         <span class="material-symbols-rounded">mode_comment</span>
@@ -172,42 +176,48 @@
                 <td>Parol</td>
                 <td>2</td>
                 <td>4</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Arveles</td>
                 <td>3</td>
                 <td>5</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Aspirin</td>
                 <td>4</td>
                 <td>6</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Lustral</td>
                 <td>1</td>
                 <td>2</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
             <tr>
                 <td>5</td>
                 <td>Panadol</td>
                 <td>7</td>
                 <td>7</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
             <tr>
                 <td>6</td>
                 <td>Fermara</td>
                 <td>7</td>
                 <td>7</td>
-                <td><i class="fa-solid fa-circle-info"></i></td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
             </tr>
 
         </table>
@@ -217,6 +227,15 @@
 
     </section>
     <script src="js/menu.js"></script>
+    <script>
+        function info(infoText) {
+            const infoElement = document.getElementById("info");
+            const textElement = document.getElementById("text");
+            infoElement.style.display = "block";
+            textElement.textContent = infoText;
+        }
+
+    </script>
 </body>
 
 </html>
