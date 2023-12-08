@@ -16,6 +16,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <script src="js/chatbox.js" defer></script>
+    <link rel="stylesheet" href="styles/receteolustur.css">
     <link rel="stylesheet" href="styles/chatbox.css">
 </head>
 
@@ -139,6 +140,114 @@
             </div>
         </div>
 
+        <div class="presSearch">
+
+            <label for="">Randevu No:</label>
+            <input style="width: 200px; margin-left: 20px;" class="presInput" type="text">
+
+            <button style="margin: 20px;" class="saveButton">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Sorgula
+            </button>
+        </div>
+
+        <div class="main">
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-solid fa-pencil"></i>
+                        <h2>Randevu Bilgisi</h2>
+                    </div>
+                    <div class="save">
+                        <button style="background-color: #ff9436;" class="saveButton">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Düzenle
+                        </button>
+                    </div>
+                </div>
+
+                <div class="presMain" id="meetingPressMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="meetingDate">Randevu Tarihi</label>
+                            <input class="presInput" type="date">
+                        </div>
+                        <div class="input">
+                            <label for="meetingNo">Randevu No</label>
+                            <input class="presInput" type="text" value="RND001" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="meetingTime">Randevu Saati</label>
+                            <input class="presInput" type="time">
+                        </div>
+                        <div class="input">
+                            <label for="clinics">Klinikler</label>
+                            <input class="presInput" list="clinicOptions">
+                            <datalist id="clinicOptions">
+                                <option value="Klinik 1">
+                                <option value="Klinik 2">
+                                <option value="Klinik 3">
+                                <option value="Klinik 4">
+                                <option value="Klinik 5">
+                                <option value="Klinik 6">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="doctors">Doktorlar</label>
+                            <input class="presInput" list="doctorOptions">
+                            <datalist id="doctorOptions">
+                                <option value="Doktor 1">
+                                <option value="Doktor 2">
+                                <option value="Doktor 3">
+                                <option value="Doktor 4">
+                                <option value="Doktor 5">
+                                <option value="Doktor 6">
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-regular fa-user"></i>
+                        <h2>Hasta Bilgisi</h2>
+                    </div>
+
+                </div>
+
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="patientNameSurname">Hasta Adı Soyadı</label>
+                            <input class="presInput" type="text" disabled>
+                        </div>
+                        <div class="input">
+                            <label for="patientIdenificationNo">Hasta TC No</label>
+                            <input class="presInput" type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="patientAge">Hasta Yaşı</label>
+                            <input class="presInput" type="text" disabled>
+                        </div>
+
+                        <div class="input">
+                            <label for="patientComplaint">Hasta Şikayeti</label>
+                            <textarea class="plaint" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <!-- Kodun yazılacağı yer -->
 
     </section>
