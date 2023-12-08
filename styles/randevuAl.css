@@ -1,0 +1,163 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+}
+
+.presInfo {
+    width: 90%;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+    border-bottom: 1px solid #707070;
+}
+
+.titleText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleText i {
+    color: #2196F3;
+    font-size: 22px;
+}
+
+.titleText h2 {
+    margin-left: 10px;
+    font-size: 23px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.saveButton {
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #2196F3;
+    border-radius: 20px;
+    border: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background-color: #0056b3;
+}
+
+.saveButton i {
+    color: #fff;
+    font-size: 22px;
+}
+
+.presMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 100px;
+    margin: 0px 0px;
+}
+
+.input label {
+    font-size: 18px;
+    color: #707070;
+    margin-bottom: 5px;
+}
+
+.presInput {
+    width: 400px;
+    height: 35px;
+    outline: none;
+    border: 1px solid #707070;
+    border-bottom: 2px solid #2196F3;
+    transition: 200ms;
+}
+
+.presInput:focus {
+
+    border-bottom: 2px solid #0056b3;
+}
+
+.plaint {
+    width: 400px;
+    height: 120px;
+    outline: none;
+    border: 1px solid #707070;
+    border-bottom: 2px solid #2196F3;
+    transition: 200ms;
+}
+
+.plaint:focus {
+
+    border-bottom: 2px solid #0056b3;
+}
+
+.presSearch {
+    display: flex;
+    width: 90%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .presSearch {
+        justify-content: space-around;
+    }
+    .saveButton{
+        font-size: 15px;
+    }
+}
+
+
+.meetingButtons{
+    display: flex;
+    margin: 2% 0;
+    width: 100%;
+    justify-content: space-around;
+}
+.meetingButton{
+    width: 20%;
+}
+.meetingButton a{
+    display: block;
+    background-color: #2196F3;
+    padding: 5%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15%;
+}
+.meetingButton a:hover{
+    background-color: #0056b3;
+    transition: 300ms;
+}
+
+@media only screen and (max-width: 1000px){
+    .meetingButton a, .meetingButton h5{
+        font-size: 10px;
+    }
+}
