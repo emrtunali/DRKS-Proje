@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="js/script.js">
     <link rel="stylesheet" href="styles/receteOlustur.css">
+    <script src="/JS/receteOlustur.js"></script>
 </head>
 
 <body>
@@ -222,16 +223,15 @@
             </div>
 
 
-            <div class="presInfo">
+            <div class="presInfoDrug">
                 <div class="title">
                     <div class="titleText">
                         <i class="fa-solid fa-capsules"></i>
                         <h2>İlaç Bilgisi</h2>
+                        <button class="addDrug" id="addDrug" onclick="addDrug()">Yeni İlaç Ekle</button>
                     </div>
-
                 </div>
-
-                <div class="presMain">
+                <div class="presMainDrug">
                     <div class="input2">
                         <div class="input">
                             <label for="">İlaç Adı</label>
@@ -253,21 +253,15 @@
                     <div class="input2">
                         <div class="input">
                             <label for="">Yazılacak Doz</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" id="prescribedDose" type="text">
                         </div>
-
                         <div class="input">
-
                             <label for="">Maksimum Doz</label>
-
                             <input class="presInput" type="text" disabled>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
 
 

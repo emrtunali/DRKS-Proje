@@ -6,7 +6,7 @@
     max-width: 1500px;
 }
 
-.presInfo {
+.presInfo, .presInfoDrug{
     width: 90%;
 }
 
@@ -63,7 +63,7 @@
     font-size: 22px;
 }
 
-.presMain {
+.presMain, .presMainDrug{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -120,6 +120,18 @@
     align-items: center;
     justify-content: left;
     flex-wrap: wrap;
+}
+.addDrug{
+    margin-left: 20px;
+    background-color: #2196F3;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.addDrug:hover{
+    background-color: #0056b3;
+    transition: 200ms;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {

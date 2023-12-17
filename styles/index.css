@@ -6,7 +6,18 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+.main{
+    padding: 2%;
+    width: 100%;
+}
+.main p{
+    font-size: 12px;
+    display: inline;
+}
+.main a{
+    text-decoration: none;
+    color: #2196f3;
+}
 :root {
     --body-color: #fff;
     --sidebar-color: #e4f3ff;
@@ -280,6 +291,25 @@ i:hover {
     .main-header h1 {
         font-size: 22px;
         margin-left: 10px;
+    }
+
+    .main p{
+        font-size: 10px;
+    }
+    .main a{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .main p{
+        font-size: 8px;
+    }
+    .main a{
+        font-size: 10px;
+    }
+    .main h3{
+        font-size: 16px;
     }
 }
 
