@@ -18,6 +18,7 @@
     <script src="js/chatbox.js" defer></script>
     <link rel="stylesheet" href="styles/chatbox.css">
     <link rel="stylesheet" href="/styles/raporSorgula.css">
+    <script src="/JS/raporSorgula.js"></script>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
             <div class="image-text">
                 <div class="text logo-text">
                     <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="profession">Kardiyoloji</span>
+                    <span class="personelClinicName">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -143,7 +144,7 @@
         <div class="presSearch">
 
             <label for="">Reçete No veya Raporlanan Doktor Adı:</label>
-            <input style="width: 200px; margin-left: 20px;" class="presInput" type="text">
+            <input style="width: 200px; margin-left: 20px;" class="presInput" id="reportIdOrReportedPersonel" type="text">
 
             <label for="">&nbsp;Tarih:</label>
             <input style="width: 200px; margin-left: 20px;" class="presInput" type="date">
@@ -161,10 +162,37 @@
             Yani rapor oluştur sayfasındaki kutu.
         </p>
 
+        <table class="table">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Rapor Numarası</th>
+                <th scope="col">Oluşturma Tarihi</th>
+                <th scope="col">Oluşturan Personel</th>
+                <th scope="col">Reçete Numarası</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>RPR001</td>
+                <td>01.01.2024</td>
+                <td>Cem Kasapbaşı</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içerir.')"
+                        class="fa-solid fa-circle-info">RCT001</i></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>RPR002</td>
+                <td>02.01.2024</td>
+                <td>Ufuk Şanver</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içerir.')"
+                        class="fa-solid fa-circle-info">RCT002</i></td>
+            </tr>
+        </table>
+
         <!-- Kodun yazılacağı yer -->
 
     </section>
     <script src="js/menu.js"></script>
+    
 </body>
 
 </html>

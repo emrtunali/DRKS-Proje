@@ -6,7 +6,7 @@
     max-width: 1500px;
 }
 
-.presInfo, .presInfoDrug{
+.presInfo {
     width: 90%;
 }
 
@@ -37,8 +37,10 @@
 }
 
 .save {
+    display: flex;
     align-items: center;
-    float: right;
+    justify-content: center;
+    margin-right: 20px;
 }
 
 .saveButton {
@@ -61,7 +63,7 @@
     font-size: 22px;
 }
 
-.presMain, .presMainDrug{
+.presMain {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -119,22 +121,43 @@
     justify-content: left;
     flex-wrap: wrap;
 }
-.addDrug{
-    margin-left: 20px;
-    background-color: #2196F3;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-}
-.addDrug:hover{
-    background-color: #0056b3;
-    transition: 200ms;
-    cursor: pointer;
-}
 
 @media only screen and (max-width: 500px) {
 
     .presSearch {
         justify-content: space-around;
+    }
+    .saveButton{
+        font-size: 15px;
+    }
+}
+
+
+.meetingButtons{
+    display: flex;
+    margin: 2% 0;
+    width: 100%;
+    justify-content: space-around;
+}
+.meetingButton{
+    width: 20%;
+}
+.meetingButton a{
+    display: block;
+    background-color: #2196F3;
+    padding: 5%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15%;
+}
+.meetingButton a:hover{
+    background-color: #0056b3;
+    transition: 300ms;
+}
+
+@media only screen and (max-width: 1000px){
+    .meetingButton a, .meetingButton h5{
+        font-size: 10px;
     }
 }

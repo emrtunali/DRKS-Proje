@@ -53,7 +53,7 @@
             <div class="image-text">
                 <div class="text logo-text">
                     <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="profession">Kardiyoloji</span>
+                    <span class="personelClinicName">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -144,8 +144,7 @@
 
         <div class="presSearch">
 
-            <label for="">Reçete No:</label>
-            <input style="width: 200px; margin-left: 20px;" class="presInput" type="text">
+            <p>* Aktif bulunan alanlardan herhangi birine değer girerek sorgulama yapabilirsiniz.</p>
 
             <button style="margin: 20px;" class="saveButton">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -161,34 +160,28 @@
                         <i class="fa-solid fa-pencil"></i>
                         <h2>Reçete Bilgisi</h2>
                     </div>
-                    <div class="save">
-                        <button style="background-color: #ff9436;" class="saveButton">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            Düzenle
-                        </button>
-                    </div>
                 </div>
 
                 <div class="presMain">
                     <div class="input2">
                         <div class="input">
                             <label for="">Reçete Tarihi</label>
-                            <input class="presInput" type="date">
+                            <input class="presInput" type="date" id="prescriptionDate">
                         </div>
                         <div class="input">
                             <label for="">Reçete No</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="prescriptionId">
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="">Reçeteyi Oluşturan</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="personelName">
                         </div>
 
                         <div class="input">
                             <label for="">Klinik</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="clinicName" disabled>
                         </div>
                     </div>
                 </div>
@@ -209,22 +202,22 @@
                     <div class="input2">
                         <div class="input">
                             <label for="">Hasta Adı Soyadı</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="patientName" disabled>
                         </div>
                         <div class="input">
                             <label for="">Hasta TC No</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" id="patientId" type="text">
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="">Hasta Yaşı</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="patientAge" disabled>
                         </div>
 
                         <div class="input">
                             <label for="">Hasta Şikayeti</label>
-                            <textarea class="plaint" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea class="plaint" name="" id="patientComplaint" cols="30" rows="10" disabled></textarea>
                         </div>
                     </div>
                 </div>
@@ -246,7 +239,8 @@
                     <div class="input2">
                         <div class="input">
                             <label for="">İlaç Adı</label>
-                            <input class="presInput" list="ilac">
+                            <input class="presInput" list="drugList" id="drugList" disabled>
+                            <!--
                             <datalist id="ilac">
                                 <option value="Parol">
                                 <option value="Arveles">
@@ -255,21 +249,22 @@
                                 <option value="Panadol">
                                 <option value="Fermara">
                             </datalist>
+                            -->
                         </div>
                         <div class="input">
                             <label for="">Önerilen Doz</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="recommendedDose" disabled>
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="">Yazılan Doz</label>
-                            <input class="presInput" type="text">
+                            <input class="presInput" type="text" id="prescribedDose" disabled>
                         </div>
 
                         <div class="input">
                             <label for="">Maksimum Doz</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="maxDose" disabled>
                         </div>
                     </div>
                 </div>

@@ -54,7 +54,7 @@
             <div class="image-text">
                 <div class="text logo-text">
                     <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="profession">Kardiyoloji</span>
+                    <span class="personelClinicName">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -152,7 +152,7 @@
                         <h2>Reçete Bilgisi</h2>
                     </div>
                     <div class="save">
-                        <button class="saveButton">
+                        <button class="saveButton" id="saveThePrescription" onclick="saveThePrescription()">
                             <i class="fa-regular fa-square-check"></i>
                             Reçeteyi Kaydet
                         </button>
@@ -163,22 +163,22 @@
                     <div class="input2">
                         <div class="input">
                             <label for="">Reçete Tarihi</label>
-                            <input class="presInput" type="date">
+                            <input class="presInput" type="date" id="prescriptionDate" disabled value="">
                         </div>
                         <div class="input">
                             <label for="">Reçete No</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="prescriptionId" disabled>
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="">Reçeteyi Oluşturan</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="personelName" disabled>
                         </div>
 
                         <div class="input">
                             <label for="">Klinik</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="clinicName" disabled>
                         </div>
                     </div>
                 </div>
@@ -198,23 +198,31 @@
                 <div class="presMain">
                     <div class="input2">
                         <div class="input">
-                            <label for="">Hasta Adı Soyadı</label>
-                            <input class="presInput" id="patientNameSurname" type="text" disabled>
+                            <label for="">Hasta Adı Soyadı <button onclick="getPatientInfo()">Get</button></label>
+                            <input class="presInput" list="patientList" id="patientNameInput">
+                            <datalist id="patientList">
+                                <option value="Mustafa">
+                                <option value="Cem">
+                                <option value="Ufuk">
+                                <option value="Artrim">
+                                <option value="Mertcan">
+                                <option value="Ayhan">
+                            </datalist>
                         </div>
                         <div class="input">
                             <label for="">Hasta TC No</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="patientId" disabled>
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="">Hasta Yaşı</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="patientAge" disabled>
                         </div>
 
                         <div class="input">
                             <label for="">Hasta Şikayeti</label>
-                            <textarea class="plaint" name="" id="" cols="30" rows="10" disabled></textarea>
+                            <textarea class="plaint" name="" id="patientComplaint" cols="30" rows="10" disabled></textarea>
                         </div>
                     </div>
                 </div>
@@ -228,15 +236,17 @@
                     <div class="titleText">
                         <i class="fa-solid fa-capsules"></i>
                         <h2>İlaç Bilgisi</h2>
+                        <!--  
                         <button class="addDrug" id="addDrug" onclick="addDrug()">Yeni İlaç Ekle</button>
+                        -->
                     </div>
                 </div>
                 <div class="presMainDrug">
                     <div class="input2">
                         <div class="input">
-                            <label for="">İlaç Adı</label>
-                            <input class="presInput" list="ilac">
-                            <datalist id="ilac">
+                            <label for="">İlaç Adı <button onclick="getDrugInfo()">Get</button></label>
+                            <input class="presInput" list="drugList" id="drugListInput">
+                            <datalist id="drugList">
                                 <option value="Parol">
                                 <option value="Arveles">
                                 <option value="Aspirin">
@@ -247,7 +257,7 @@
                         </div>
                         <div class="input">
                             <label for="">Önerilen Doz</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="recommendedDose" disabled>
                         </div>
                     </div>
                     <div class="input2">
@@ -257,7 +267,7 @@
                         </div>
                         <div class="input">
                             <label for="">Maksimum Doz</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="maxDose" disabled>
                         </div>
                     </div>
                 </div>

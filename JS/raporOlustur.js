@@ -12,16 +12,16 @@ function addRecipe() {
     newRecipe.innerHTML = `
         <h2>Reçete Tarihi: 01.01.2023</h2>
         <br>
-        <p><strong>Reçete No:</strong> RCT001</p>
-        <p><strong>Yazan Doktor:</strong> Dr. Mehmet Yılmaz</p>
-        <p><strong>Hasta Adı:</strong> Ayşe Demir</p>
-        <p><strong>Hasta Yaşı:</strong> 35</p>
-        <p><strong>Hasta Şikayeti:</strong> <i onclick="info('Başım ağrıyor.')"
+        <p id="reportPrescriptionId"><strong>Reçete No:</strong> </p>
+        <p id="reportPersonelId"><strong>Yazan Doktor:</strong> </p>
+        <p id="reportPatientName"><strong>Hasta Adı:</strong> </p>
+        <p id="reportPatientAge"><strong>Hasta Yaşı:</strong> </p>
+        <p id="reportPatientComplaint"><strong>Hasta Şikayeti:</strong> <i onclick="info('Başım ağrıyor.')"
             class="fa-solid fa-circle-info"></i>
         </p>
-        <p><strong>İlaç Adı:</strong> Parol</p>
-        <p><strong>Önerilen Doz Aralığı:</strong> Günde 1-3 kez</p>
-        <p><strong>Yazılan Doz Miktarı:</strong> 2</p>
+        <p id="reportDrugName"><strong>İlaç Adı:</strong> </p>
+        <p id="reportRecommendedDose"><strong>Önerilen Doz Aralığı:</strong> </p>
+        <p id="reportPrescribedDose"><strong>Yazılan Doz Miktarı:</strong> </p>
         <br>
         <button class="report-button" onclick="complain()">Reçeteyi Bildir</button>
     `;

@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="js/script.js">
         <link rel="stylesheet" href="styles/randevuAl.css">
-        <script src="/JS/randevu.js"></script>
+        <script src="/JS/randevuAl.js"></script>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
             <div class="image-text">
                 <div class="text logo-text">
                     <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="profession">Kardiyoloji</span>
+                    <span class="personelClinicName">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -178,22 +178,24 @@
                     <div class="input2">
                         <div class="input">
                             <label for="meetingDate">Randevu Tarihi</label>
-                            <input class="presInput" type="date">
+                            <input class="presInput" id="meetingDate" type="date">
                         </div>
                         <div class="input">
-                            <label for="meetingNo">Randevu No</label>
-                            <input class="presInput" type="text" value="RND001" disabled>
+                            <label for="personels">Doktorlar</label>
+                            <input class="presInput" list="personelList" id="personelListInput">
+                            <datalist id="personelList">
+                                <option value="Doktor 1">
+                                <option value="Doktor 2">
+                                <option value="Doktor 3">
+                                <option value="Doktor 4">
+                                <option value="Doktor 5">
+                                <option value="Doktor 6">
+                            </datalist>
                         </div>
-                    </div>
-                    <div class="input2">
-                        <div class="input">
-                            <label for="meetingTime">Randevu Saati</label>
-                            <input class="presInput" type="time">
-                        </div>
-                        <div class="input">
+                        <div class="input" id="clinicListDiv">
                             <label for="clinics">Klinikler</label>
-                            <input class="presInput" list="clinicOptions">
-                            <datalist id="clinicOptions">
+                            <input class="presInput" list="clinicList" id="clinicListInput">
+                            <datalist id="clinicList">
                                 <option value="Klinik 1">
                                 <option value="Klinik 2">
                                 <option value="Klinik 3">
@@ -205,18 +207,15 @@
                     </div>
                     <div class="input2">
                         <div class="input">
-                            <label for="doctors">Doktorlar</label>
-                            <input class="presInput" list="doctorOptions">
-                            <datalist id="doctorOptions">
-                                <option value="Doktor 1">
-                                <option value="Doktor 2">
-                                <option value="Doktor 3">
-                                <option value="Doktor 4">
-                                <option value="Doktor 5">
-                                <option value="Doktor 6">
-                            </datalist>
+                            <label for="meetingTime">Randevu Saati</label>
+                            <input class="presInput" id="meetingTime" type="time">
+                        </div>
+                        <div class="input">
+                            <label for="meetingNo">Randevu No</label>
+                            <input class="presInput" type="text" id="meetingId" value="RND001" disabled>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
@@ -233,22 +232,22 @@
                     <div class="input2">
                         <div class="input">
                             <label for="patientNameSurname">Hasta Adı Soyadı</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="patientName" disabled>
                         </div>
                         <div class="input">
                             <label for="patientIdenificationNo">Hasta TC No</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="patientId" disabled>
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="patientAge">Hasta Yaşı</label>
-                            <input class="presInput" type="text" disabled>
+                            <input class="presInput" type="text" id="patientAge" disabled>
                         </div>
 
                         <div class="input">
                             <label for="patientComplaint">Hasta Şikayeti</label>
-                            <textarea class="plaint" name="" id="" cols="30" rows="10"></textarea>
+                            <textarea class="plaint" name="" id="patientComplaint" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
