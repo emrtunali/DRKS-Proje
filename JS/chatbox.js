@@ -57,8 +57,39 @@ const generateResponse = (chatElement) => {
 
 // Yanıtın sağlıkla ilgili anahtar kelimeler içerip içermediğini kontrol etmek için fonksiyon
 const isHealthRelated = (response) => {
-    const healthKeywords = ["sağlık", "tıbbi", "beslenme", "egzersiz", "wellness","ilaç","ağrı","kırık,","hastalık","grip","virüs"];
-    return healthKeywords.some(keyword => response.toLowerCase().includes(keyword));
+    const healthKeywords = [
+        "sağlık", 
+        "tıbbi", 
+        "beslenme", 
+        "egzersiz", 
+        "wellness",
+        "ilaç",
+        "ağrı",
+        "kırık",
+        "hastalık",
+        "grip",
+        "virüs",
+        "fiziksel",
+        "psikolojik",
+        "bağışıklık",
+        "aşı",
+        "hijyen",
+        "örneklemek",
+        "stres",
+        "rehabilitasyon",
+        "dengeli",
+        "sağlıklı yaşam",
+        "kalp",
+        "akciğer",
+        "baş ağrısı",
+        "ruh sağlığı",
+        "diyet",
+        "kan basıncı",
+        "kolestrol",
+        "merhaba",
+        "selam"
+      ];
+          return healthKeywords.some(keyword => response.toLowerCase().includes(keyword));
 }
 
 const handleChat = () => {
