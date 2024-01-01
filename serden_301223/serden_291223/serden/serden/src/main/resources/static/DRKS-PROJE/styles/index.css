@@ -6,21 +6,10 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-.main{
-    padding: 2%;
-    width: 100%;
-}
-.main p{
-    font-size: 12px;
-    display: inline;
-}
-.main a{
-    text-decoration: none;
-    color: #2196f3;
-}
+
 :root {
-    --body-color: #fff;
-    --sidebar-color: #e4f3ff;
+    --body-color: #ebebeb;
+    --sidebar-color: #fff;
     --primary-color: #2196F3;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
@@ -34,7 +23,7 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--body-color) !important;
+    background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -179,10 +168,7 @@ body.dark .sidebar li a:hover .text {
     top: 0;
     left: 250px;
     width: calc(100% - 250px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--body-color);
 
 }
 
@@ -200,17 +186,14 @@ i {
 i:hover {
     color: #fff;
 }
-.divbutton{
-    margin-right: 2%;
-}
 
 .main-header {
     width: 100%;
     height: 70px;
-    background-color:var(--sidebar-color);
+    background-color: #ffffff;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
     font-size: 20px;
     margin-left: 0;
 }
@@ -266,21 +249,9 @@ i:hover {
         left: -250px;
     }
 
-    .prescriptionDrugArea{
-        display: block;
-    }
-
     .home {
         width: 100%;
         left: 0;
-    }
-
-    .prescriptionInformation{
-        display: block;
-    }
-
-    .pageRightWindow{
-        width: 100%;
     }
 
     #hamburger {
@@ -295,25 +266,6 @@ i:hover {
         font-size: 22px;
         margin-left: 10px;
     }
-
-    .main p{
-        font-size: 10px;
-    }
-    .main a{
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .main p{
-        font-size: 8px;
-    }
-    .main a{
-        font-size: 10px;
-    }
-    .main h3{
-        font-size: 16px;
-    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -326,8 +278,6 @@ i:hover {
     .headertext {
         margin-left: 0px;
     }
-   
-    
 }
 
 @media only screen and (max-width: 420px) {
@@ -344,99 +294,4 @@ i:hover {
     .headertext {
         margin-left: 0px;
     }
-}
-
-.pageRightWindow {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    padding: 15px;
-    height: 47rem;
-
-}
-
-.pageRightWindowInnerLine{
-    background: white;
-    border: 1px solid rgb(177, 177, 177);
-    height: 100%;
-    padding: 20px;
-}
-
-.createPrescriptionArea{
-    display: flex;
-    position: relative;
-}
-.pageRightWindowInnerLine h3{
-   margin-left: 15px;
-   color: #707070;
-}
-.createPrescriptionArea a{
-    padding: 10px;
-    margin-top: -10px;
-    position: absolute;
-    right: 0;
-    background-color: #2196F3;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-}
-.pageRightWindowInnerLine i{
-    color: #2196f3;
-    font-size: 15px;
-    background-color: white;
-    padding: 5px;
-    border-radius: 50%;
-}
-.readOnly{
-    width: 350px;
-    font-size: 20px;
-    padding: 3px;
-    border-color: #2196F3;
-}
-.prescriptionInformation{
-    display: flex;
-    justify-content: space-evenly;
-}
-.prescriptionDrugInfoArea{
-    margin-top: 40px;
-}
-.prescriptionDrugInfoArea i{
-    float: left;
-}
-.prescriptionDrugInfoArea h3{
-    margin-left: 40px;
-}
-
-.prescriptionDrugArea{
-    display: flex;
-    justify-content: space-evenly;
-}
-.drugInputs{
-    width: 200px;
-    font-size: 20px;
-    padding: 3px;
-    border-color: #2196F3;
-}
-.prescriptionPatientInfoArea{
-    margin-top: 40px;
-}
-.prescriptionPatientInfoArea i{
-    float: left;
-}
-.prescriptionPatientInfoArea h3{
-    margin-left: 40px;
-}
-
-.prescriptionPatientArea{
-    display: flex;
-    justify-content: space-evenly;
-}
-.patientInputs{
-    width: 200px;
-    font-size: 20px;
-    padding: 3px;
-    border-color: #2196F3;
-}
-.patientComplaint{
-    margin-top: 40px;
 }

@@ -8,24 +8,22 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reçete Takip Sistemi Ana Sayfa</title>
+    <title>Reçete Takip Sistemi Randevu Al</title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-    <script src="js/chatbox.js" defer></script>
-    <link rel="stylesheet" href="styles/chatbox.css">
-    <link rel="stylesheet" href="styles/receteolustur.css">
-
+        <script src="js/chatbox.js" defer></script>
+        <link rel="stylesheet" href="styles/chatbox.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="js/script.js">
+        <link rel="stylesheet" href="styles/randevuAl.css">
+        <script src="/JS/randevuAl.js"></script>
 </head>
 
 <body>
-    <div id="container23">
-        <button id="button1">Buton 1</button>
-        <button id="button2">Buton 2</button>
-    </div>
     <!-- chatbox -->
     <button class="chatbot-toggler">
         <span class="material-symbols-rounded">mode_comment</span>
@@ -141,90 +139,124 @@
             <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
             <div class="headertext">
                 <img src="images/logo.png" alt="">
-                <h1>Reçete Takip Sistemi Ana Sayfa</h1>
+                <h1>Reçete Takip Sistemi Randevu Al</h1>
             </div>
-
-            <div class="divbutton">
-                <a href=""> <button style="margin-right: 10px; background-color: orangered;" class="saveButton">Hasta
-                        Girişi </button> </a>
-                <a href=""> <button class="saveButton">Personel Girişi</button> </a>
-            </div>
-
         </div>
-
-
 
         <div class="main">
-            <div class="sitePromotion">
-                <h3>Reçete Takip Sistemi - Sürüm : v1</h3>
-                <br>
-                <p>Hoş geldiniz!<br><br>Reçete Takip Sistemi, sağlık hizmetlerine ulaşmak, daha etkin ve güvenli bir
-                    şekilde yönetmek için tasarlanmış bir platformdur.
-                    Sağlık sektöründeki teknolojik gelişmeleri kullanarak, hem hastalar hem de sağlık profesyonelleri
-                    için pratik ve güvenilir bir yapı sağlamaktadır.
-                    RTS' nin temel hedefi hastanelerde muayene öncesi bekleme süresini ortadan kaldırıp, hastane ve
-                    poliklinik önlerindeki kalabalıkları azaltarak
-                    herkes için daha sakin ve huzurlu bir ortam sağlanmasıdır. Amaç vatandaşların kendi zamanlarını
-                    doğru yönetmeleridir. Hastanelerde kaynak kullanım
-                    ve dağıtımının ölçülmesi suretiyle sağlık hizmetlerinde verim ve kalitesinin artırılmasıyla RTS
-                    verileri sayesinde sağlık politikalarının
-                    geliştirilmesine yardımcı olmaktır. Hastanelerdeki hekim iş gücünün etkin kullanımını sağlamaktır.
-                </p>
+            <div class="meetingButtons">
+                <div class="meetingButton">
+                    <a href="#" onclick="aileHekimiRandevu()">Aile Hekimi Randevusu Al</a>
+                    <!--
+                    <h5>Bağlı olduğunuz Aile Hekiminden randevu alın.</h5>
+                    -->
+                </div>
+                <div class="meetingButton">
+                    <a href="#" onclick="hastaneRandevu()">Hastane Randevusu Al</a>
+                    <!--
+                    <h5>Klinik ve Doktorunuzu seçerek randevu alın.</h5>
+                    -->
+                </div>
+            </div>
+        
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-solid fa-pencil"></i>
+                        <h2>Randevu Bilgisi</h2>
+                    </div>
+                    <div class="save">
+                        <button class="saveButton">
+                            <i class="fa-regular fa-square-check"></i>
+                            Randevuyu Kaydet
+                        </button>
+                    </div>
+                </div>
+
+                <div class="presMain" id="meetingPressMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="meetingDate">Randevu Tarihi</label>
+                            <input class="presInput" id="meetingDate" type="date">
+                        </div>
+                        <div class="input">
+                            <label for="personels">Doktorlar</label>
+                            <input class="presInput" list="personelList" id="personelListInput">
+                            <datalist id="personelList">
+                                <option value="Doktor 1">
+                                <option value="Doktor 2">
+                                <option value="Doktor 3">
+                                <option value="Doktor 4">
+                                <option value="Doktor 5">
+                                <option value="Doktor 6">
+                            </datalist>
+                        </div>
+                        <div class="input" id="clinicListDiv">
+                            <label for="clinics">Klinikler</label>
+                            <input class="presInput" list="clinicList" id="clinicListInput">
+                            <datalist id="clinicList">
+                                <option value="Klinik 1">
+                                <option value="Klinik 2">
+                                <option value="Klinik 3">
+                                <option value="Klinik 4">
+                                <option value="Klinik 5">
+                                <option value="Klinik 6">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="meetingTime">Randevu Saati</label>
+                            <input class="presInput" id="meetingTime" type="time">
+                        </div>
+                        <div class="input">
+                            <label for="meetingNo">Randevu No</label>
+                            <input class="presInput" type="text" id="meetingId" value="RND001" disabled>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
 
-            <br><br>
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-regular fa-user"></i>
+                        <h2>Hasta Bilgisi</h2>
+                    </div>
 
-            <div class="siteMap">
-                <hr>
-                <a href="/receteOlustur.html">Reçete Oluştur Sayfası : </a>
-                <p>Bu sayfada, hastalar tarafından oluşturulan randevular üzerinden hekimlerin reçete oluşturmasına
-                    olanak sağlanmaktadır.</p>
-                <br>
-                <hr>
-                <a href="/receteSorgula.html">Reçete Sorgula Sayfası : </a>
-                <p>Bu sayfada, Reçete Oluştur sayfasında kaydedilen reçeteler hastalar veya hekimler tarafından kontrol
-                    edilmek üzere saklanır.</p>
-                <br>
-                <hr>
-                <a href="/randevuAl.html">Randevu Al Sayfası : </a>
-                <p>Bu sayfada, hastalar tarih, saat, aile hekimi veya klinik, doktor seçebilir, şikayetini yazarak kolay
-                    bir şekilde randevu alabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/randevuSorgula.html">Randevu Sorgula Sayfası : </a>
-                <p>Bu sayfada, randevu numarası, randevu günü, klinik adı veya hasta adına göre alınan randevular kolay
-                    bir şekilde sorgulanabilir.</p>
-                <br>
-                <hr>
-                <a href="/ilacListesi.html">İlaç Listesi Sayfası : </a>
-                <p>Bu sayfada, veritabanında kayıtlı olan bütün ilaçların bilgileri bulunmakta ve ilaç adına göre
-                    arama/sorgulaması yapılabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/raporOlustur.html">Rapor Oluştur Sayfası : </a>
-                <p>Bu sayfada, hekimler tarafından hatalı oluşturulan reçeteler saklanmaktadır. Bu reçeteler incelenip
-                    hakkında bildiri yapılabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/raporSorgula.html">Rapor Sorgula Sayfası : </a>
-                <p>Bu sayfada, bildirilen raporlar saklanmaktadır. Raporlanan doktor adı, tarih, reçete veya rapor
-                    numarasına göre sorgu yapılabilmektedir.</p>
-                <hr>
-            </div>
+                </div>
 
-            <br><br>
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label for="patientNameSurname">Hasta Adı Soyadı</label>
+                            <input class="presInput" type="text" id="patientName" disabled>
+                        </div>
+                        <div class="input">
+                            <label for="patientIdenificationNo">Hasta TC No</label>
+                            <input class="presInput" type="text" id="patientId" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label for="patientAge">Hasta Yaşı</label>
+                            <input class="presInput" type="text" id="patientAge" disabled>
+                        </div>
 
-            <div class="releaseNote">
-                <h3>Sürüm Değişiklikleri</h3>
-                <br>
-                <p>Değişiklikler.</p>
+                        <div class="input">
+                            <label for="patientComplaint">Hasta Şikayeti</label>
+                            <textarea class="plaint" name="" id="patientComplaint" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Kodun yazılacağı yer -->
+    </div>
 
     </section>
     <script src="js/menu.js"></script>
-
 </body>
 
 </html>

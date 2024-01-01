@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reçete Takip Sistemi Ana Sayfa</title>
+    <title>Reçete Takip Sistemi İlaç Listesi</title>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet"
@@ -17,14 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <script src="js/chatbox.js" defer></script>
     <link rel="stylesheet" href="styles/chatbox.css">
-    <link rel="stylesheet" href="styles/receteolustur.css">
-
+    <link rel="stylesheet" href="styles/ilacListe.css">
 </head>
 
 <body>
-    <div id="container23">
-        <button id="button1">Buton 1</button>
-        <button id="button2">Buton 2</button>
+    <div class="info" id="info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <div id="text"></div>
     </div>
     <!-- chatbox -->
     <button class="chatbot-toggler">
@@ -55,8 +54,8 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="personelClinicName">Kardiyoloji</span>
+                    <span class="loggedInUser"></span>
+                    <span class="clinicName"></span>
                 </div>
             </div>
         </header>
@@ -141,89 +140,110 @@
             <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
             <div class="headertext">
                 <img src="images/logo.png" alt="">
-                <h1>Reçete Takip Sistemi Ana Sayfa</h1>
-            </div>
-
-            <div class="divbutton">
-                <a href=""> <button style="margin-right: 10px; background-color: orangered;" class="saveButton">Hasta
-                        Girişi </button> </a>
-                <a href=""> <button class="saveButton">Personel Girişi</button> </a>
-            </div>
-
-        </div>
-
-
-
-        <div class="main">
-            <div class="sitePromotion">
-                <h3>Reçete Takip Sistemi - Sürüm : v1</h3>
-                <br>
-                <p>Hoş geldiniz!<br><br>Reçete Takip Sistemi, sağlık hizmetlerine ulaşmak, daha etkin ve güvenli bir
-                    şekilde yönetmek için tasarlanmış bir platformdur.
-                    Sağlık sektöründeki teknolojik gelişmeleri kullanarak, hem hastalar hem de sağlık profesyonelleri
-                    için pratik ve güvenilir bir yapı sağlamaktadır.
-                    RTS' nin temel hedefi hastanelerde muayene öncesi bekleme süresini ortadan kaldırıp, hastane ve
-                    poliklinik önlerindeki kalabalıkları azaltarak
-                    herkes için daha sakin ve huzurlu bir ortam sağlanmasıdır. Amaç vatandaşların kendi zamanlarını
-                    doğru yönetmeleridir. Hastanelerde kaynak kullanım
-                    ve dağıtımının ölçülmesi suretiyle sağlık hizmetlerinde verim ve kalitesinin artırılmasıyla RTS
-                    verileri sayesinde sağlık politikalarının
-                    geliştirilmesine yardımcı olmaktır. Hastanelerdeki hekim iş gücünün etkin kullanımını sağlamaktır.
-                </p>
-            </div>
-
-            <br><br>
-
-            <div class="siteMap">
-                <hr>
-                <a href="/receteOlustur.html">Reçete Oluştur Sayfası : </a>
-                <p>Bu sayfada, hastalar tarafından oluşturulan randevular üzerinden hekimlerin reçete oluşturmasına
-                    olanak sağlanmaktadır.</p>
-                <br>
-                <hr>
-                <a href="/receteSorgula.html">Reçete Sorgula Sayfası : </a>
-                <p>Bu sayfada, Reçete Oluştur sayfasında kaydedilen reçeteler hastalar veya hekimler tarafından kontrol
-                    edilmek üzere saklanır.</p>
-                <br>
-                <hr>
-                <a href="/randevuAl.html">Randevu Al Sayfası : </a>
-                <p>Bu sayfada, hastalar tarih, saat, aile hekimi veya klinik, doktor seçebilir, şikayetini yazarak kolay
-                    bir şekilde randevu alabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/randevuSorgula.html">Randevu Sorgula Sayfası : </a>
-                <p>Bu sayfada, randevu numarası, randevu günü, klinik adı veya hasta adına göre alınan randevular kolay
-                    bir şekilde sorgulanabilir.</p>
-                <br>
-                <hr>
-                <a href="/ilacListesi.html">İlaç Listesi Sayfası : </a>
-                <p>Bu sayfada, veritabanında kayıtlı olan bütün ilaçların bilgileri bulunmakta ve ilaç adına göre
-                    arama/sorgulaması yapılabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/raporOlustur.html">Rapor Oluştur Sayfası : </a>
-                <p>Bu sayfada, hekimler tarafından hatalı oluşturulan reçeteler saklanmaktadır. Bu reçeteler incelenip
-                    hakkında bildiri yapılabilmektedir.</p>
-                <br>
-                <hr>
-                <a href="/raporSorgula.html">Rapor Sorgula Sayfası : </a>
-                <p>Bu sayfada, bildirilen raporlar saklanmaktadır. Raporlanan doktor adı, tarih, reçete veya rapor
-                    numarasına göre sorgu yapılabilmektedir.</p>
-                <hr>
-            </div>
-
-            <br><br>
-
-            <div class="releaseNote">
-                <h3>Sürüm Değişiklikleri</h3>
-                <br>
-                <p>Değişiklikler.</p>
+                <h1>Reçete Takip Sistemi İlaç Listesi</h1>
             </div>
         </div>
+
+        <div class="presSearch">
+            <label for="">İlaç Adı:</label>
+            <input style="margin-left: 20px;  width: 200px;" class="presInput" list="ilac">
+            <datalist id="ilac">
+                <option value="Parol">
+                <option value="Arveles">
+                <option value="Aspirin">
+                <option value="Lustral">
+                <option value="Panadol">
+                <option value="Fermara">
+            </datalist>
+            <button style="margin: 20px;" class="saveButton">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Ara
+            </button>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">İlaç Adı</th>
+                <th scope="col">Önerilen Doz</th>
+                <th scope="col">Maksimum Doz</th>
+                <th scope="col">Bilgi</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Parol</td>
+                <td>2</td>
+                <td>4</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Arveles</td>
+                <td>3</td>
+                <td>5</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aspirin</td>
+                <td>4</td>
+                <td>6</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Lustral</td>
+                <td>1</td>
+                <td>2</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Panadol</td>
+                <td>7</td>
+                <td>7</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Fermara</td>
+                <td>7</td>
+                <td>7</td>
+                <td><i onclick="info('PAROL, her tabletinde 500 mg parasetamol içeren, ağrı kesici ve ateş düşürücü olarak etki eden bir ilaçtır. PAROL 20 ve 30 tablet içeren blister ambalajlardadır')"
+                        class="fa-solid fa-circle-info"></i></td>
+            </tr>
+
+        </table>
+
+
         <!-- Kodun yazılacağı yer -->
 
     </section>
     <script src="js/menu.js"></script>
+    <script>
+        function info(infoText) {
+            const infoElement = document.getElementById("info");
+            const textElement = document.getElementById("text");
+            infoElement.style.display = "block";
+            textElement.textContent = infoText;
+        }
+
+    </script>
+    <script th:inline="javascript">
+/*<![CDATA[*/
+var loggedInUser = /*[[${personelNameSurname}]]*/ '';
+var clinicName = /*[[${clinicName}]]*/ '';
+
+document.querySelector(".loggedInUser").innerText = loggedInUser;
+document.querySelector(".clinicName").innerText = clinicName; // Tırnak hatası burada
+/*]]>*/
+</script>
 
 </body>
 

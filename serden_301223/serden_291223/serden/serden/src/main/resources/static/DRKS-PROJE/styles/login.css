@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ebebeb;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 85px;
+}
+
+h2 {
+    font-size: 24px;
+    max-width: 300px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 300;
+    color:#707070;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #b9b9b9;
+    outline: none;
+}
+
+input:focus {
+    border: none;
+    outline: 2px solid #007bff;
+}
+
+button {
+    padding: 11px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.note p {
+    margin: 5px 0;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.note p:hover {
+    text-decoration: underline;
+}
+
+
+.alert {
+
+    top: 50px;
+    right: 50px;
+    opacity: 0;
+    padding: 20px;
+    background-color: #2196F3;
+    color: white;
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 300ms;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+@media only screen and (max-width: 400px) {
+    .alert {
+        top: 50px;
+        right: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

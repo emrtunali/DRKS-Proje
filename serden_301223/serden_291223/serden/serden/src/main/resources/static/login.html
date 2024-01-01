@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçete Takip Sistemi'ne giriş yapın</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+<div class="alert" id="message">
+    <span class="closebtn" onclick="this.parentElement.style.opacity=0;">&times;</span>
+    <strong>Uyarı!</strong> Parolanızı değiştirmek için Bilgi İşlem birimiyle iletişime geçiniz.
+</div>
+
+<div class="login-container">
+    <img src="images/logo.png" alt="">
+    <h2>Reçete Takip Sistemi'ne giriş yapın</h2>
+
+    <form id="loginForm">
+        <input type="text" id="username" name="username" placeholder="Kullanıcı adı" required>
+        <input type="password" id="password" name="password" placeholder="Şifre" required>
+        <button type="button" onclick="login()">Giriş Yap</button>
+        <div class="note">
+            <p onClick="alert()">Parolanızı mı unuttunuz?</p>
+        </div>
+    </form>
+
+</div>
+<script>
+        function alert() {
+            const id = document.getElementById("message");
+            id.style.opacity = 1;
+        }
+
+    </script>
+<script src="JS/personel.js" th:inline="javascript"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+var loggedInUser = /*[[${personelNameSurname}]]*/ '';
+var clinicName = /*[[${clinicName}]]*/ '';
+
+document.querySelector(".loggedInUser").innerText = loggedInUser;
+document.querySelector(".clinicName").innerText = clinicName; // Tırnak hatası burada
+/*]]>*/
+</script>
+
+</body>
+
+</html>

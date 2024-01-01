@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçete Takip Sistemi'ne giriş yapın</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+    <div class="alert" id="message">
+        <span class="closebtn" onclick="this.parentElement.style.opacity=0;">&times;</span>
+        <strong>Uyarı!</strong> Parolanızı değiştirmek için Bilgi İşlem birimiyle iletişime geçiniz.
+    </div>
+
+    <div class="login-container">
+        <img src="images/logo.png" alt="">
+        <h2>Reçete Takip Sistemi'ne giriş yapın</h2>
+
+        <form action="#" method="post">
+            <input type="text" id="loginUsername" name="loginUsername" placeholder="Kullanıcı adı" required>
+            <input type="loginPassword" id="loginPassword" name="loginPassword" placeholder="Şifre" required>
+            <button type="submit">Giriş yap</button>
+            <div class="note">
+                <p onClick="alert()">Parolanızı mı unuttunuz?</p>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        function alert() {
+            const id = document.getElementById("message");
+            id.style.opacity = 1;
+        }
+
+    </script>
+</body>
+
+</html>

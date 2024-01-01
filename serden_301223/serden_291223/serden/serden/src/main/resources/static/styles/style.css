@@ -1,0 +1,163 @@
+*{
+    margin:0px;	
+    padding:0px;
+    box-sizing: border-box;
+    list-style:none;
+}
+body{
+    background-color: rgb(223, 223, 223);
+}
+.top 
+{
+    margin: 0;
+    padding: 0;
+}
+.topMenu 
+{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img 
+{
+    height: 50px; /* Örneğin logo boyutunu belirleme */
+}
+.brand 
+{
+    font-size: 20px;
+}
+.report button 
+{
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.report button:hover 
+{
+    background-color: #1a6394;
+}
+/* TOP KISMI BİTTİ */
+
+/* GİRİŞ BAŞLADI */
+.loginMenu
+{
+    text-align: center;
+    margin: 20px;
+}
+.loginMenu p
+{
+    font-size: 1.5rem;
+    color: darkred;
+    font-weight: bold;
+}
+.loginButton , .loginFormButton , .logoutButton
+{
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.loginFormButton
+{
+    margin-top: 10%;
+}
+.loginButton:hover 
+{
+    background-color: #2980b9;
+}
+.loginBoxes
+{
+    display: block;
+    width: 250px;
+}
+.loginBoxesLabel
+{
+    font-weight: bold;
+    margin-top: 10%;
+}
+.loginOverlay 
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.loginForm
+{
+    position: relative;
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 8px;
+    text-align: center;
+}
+.loginScreenForm
+{
+    margin: 10% 0;
+}
+.closeButton 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+/* GİRİŞ BİTTİ */
+
+/* ANASAYFA BAŞLADI */
+.mainContentHomePage 
+{
+    max-width: 1200px;
+    margin: 8% auto;
+}
+.buttonGroupHomePage 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.mainButtonHomePage 
+{
+    background-color: #3498db;
+    color: #fff;
+    padding: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.mainButtonHomePage:hover 
+{
+    background-color: #2980b9;
+}
+@media screen and (max-width: 768px) 
+{
+    /* Küçük ekranlara özel stil kuralları ekleyebilirsiniz */
+    .buttonGroupHomePage 
+    {
+        grid-template-columns: 1fr;
+    }
+}
+/* ANASAYFA BİTTİ */
+

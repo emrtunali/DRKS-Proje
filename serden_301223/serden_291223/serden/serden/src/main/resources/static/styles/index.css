@@ -200,9 +200,6 @@ i {
 i:hover {
     color: #fff;
 }
-.divbutton{
-    margin-right: 2%;
-}
 
 .main-header {
     width: 100%;
@@ -210,7 +207,7 @@ i:hover {
     background-color:var(--sidebar-color);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
     font-size: 20px;
     margin-left: 0;
 }
@@ -326,7 +323,6 @@ i:hover {
     .headertext {
         margin-left: 0px;
     }
-   
     
 }
 

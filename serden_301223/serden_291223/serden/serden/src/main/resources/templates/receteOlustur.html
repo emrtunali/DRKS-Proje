@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reçete Takip Sistemi Reçete Oluştur</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="js/chatbox.js" defer></script>
+    <link rel="stylesheet" href="styles/chatbox.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="js/script.js">
+    <link rel="stylesheet" href="styles/receteOlustur.css">
+    <script src="/JS/receteOlustur.js"></script>
+</head>
+
+<body>
+    <!-- chatbox -->
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Sağlık Asistanım</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Merhaba 👋<br>Nasıl yardımcı olabilirim?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Mesaj yazın..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+    </div>
+    <!-- chatbox -->
+    <nav id="sidebar" class="sidebar close">
+        <div class="close1">
+            <i class="fa-solid fa-x" id="x" onclick="close1()"></i>
+        </div>
+        <header>
+            <div class="image-text">
+                <div class="text logo-text">
+                    <span class="loggedInUser"></span>
+                    <span class="clinicName"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Ana Sayfa</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="receteOlustur.html">
+                            <i class="icon fa-solid fa-pen-to-square"></i>
+
+                            <span class="text nav-text">Reçete Oluştur</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="receteSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Reçete Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="randevuAl.html">
+                            <i class="icon fa-solid fa-calendar-days"></i>
+                            <span class="text nav-text">Randevu Al</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="randevuSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Randevu Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="ilacListesi.html">
+                            <i class="icon fa-solid fa-list"></i>
+                            <span class="text nav-text">İlaç Listesi</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="raporOlustur.html">
+                            <i class="icon fa-solid fa-paperclip"></i>
+                            <span class="text nav-text">Rapor Oluştur</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="raporSorgula.html">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                            <span class="text nav-text">Rapor Sorgula</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Çıkış yap</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="main-header">
+            <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
+            <div class="headertext">
+                <img src="images/logo.png" alt="">
+                <h1>Reçete Takip Sistemi Reçete Oluştur</h1>
+            </div>
+        </div>
+
+
+        <div class="main">
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-solid fa-pencil"></i>
+                        <h2>Reçete Bilgisi</h2>
+                    </div>
+                    <div class="save">
+                        <button class="saveButton" id="saveThePrescription" onclick="saveThePrescription()">
+                            <i class="fa-regular fa-square-check"></i>
+                            Reçeteyi Kaydet
+                        </button>
+                    </div>
+                </div>
+
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label>Reçete Tarihi</label>
+                            <input class="presInput" type="date" id="prescriptionDate" disabled value="">
+                        </div>
+                        <div class="input">
+                            <label>Reçete No</label>
+                            <input class="presInput" type="text" id="prescriptionId" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label>Reçeteyi Oluşturan</label>
+                            <input class="presInput" type="text" id="personelName" disabled>
+                            <span class="loggedInUser"></span>
+                        </div>
+
+                        <div class="input">
+                            <label>Klinik</label>
+                            <input class="presInput" type="text" id="clinicName" disabled>
+                            <span class="clinicName"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="presInfo">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-regular fa-user"></i>
+                        <h2>Hasta Bilgisi</h2>
+                    </div>
+
+                </div>
+
+                <div class="presMain">
+                    <div class="input2">
+                        <div class="input">
+                            <label>Hasta Adı Soyadı <button onclick="getPatientInfo()">Get</button></label>
+                            <input class="presInput" list="patientList" id="patientNameInput">
+                            <datalist id="patientList">
+                                <option value="Mustafa">
+                                <option value="Cem">
+                                <option value="Ufuk">
+                                <option value="Artrim">
+                                <option value="Mertcan">
+                                <option value="Ayhan">
+                            </datalist>
+                        </div>
+                        <div class="input">
+                            <label>Hasta TC No</label>
+                            <input class="presInput" type="text" id="patientId" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label>Hasta Yaşı</label>
+                            <input class="presInput" type="text" id="patientAge" disabled>
+                        </div>
+
+                        <div class="input">
+                            <label>Hasta Şikayeti</label>
+                            <textarea class="plaint" name="" id="patientComplaint" cols="30" rows="10" disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="presInfoDrug">
+                <div class="title">
+                    <div class="titleText">
+                        <i class="fa-solid fa-capsules"></i>
+                        <h2>İlaç Bilgisi</h2>
+                        <!--  
+                        <button class="addDrug" id="addDrug" onclick="addDrug()">Yeni İlaç Ekle</button>
+                        -->
+                    </div>
+                </div>
+                <div class="presMainDrug">
+                    <div class="input2">
+                        <div class="input">
+                            <label>İlaç Adı <button onclick="getDrugInfo()">Get</button></label>
+                            <input class="presInput" list="drugList" id="drugListInput">
+                            <datalist id="drugList">
+                                <option value="Parol">
+                                <option value="Arveles">
+                                <option value="Aspirin">
+                                <option value="Lustral">
+                                <option value="Panadol">
+                                <option value="Fermara">
+                            </datalist>
+                        </div>
+                        <div class="input">
+                            <label>Önerilen Doz</label>
+                            <input class="presInput" type="text" id="recommendedDose" disabled>
+                        </div>
+                    </div>
+                    <div class="input2">
+                        <div class="input">
+                            <label>Yazılacak Doz</label>
+                            <input class="presInput" id="prescribedDose" type="text">
+                        </div>
+                        <div class="input">
+                            <label>Maksimum Doz</label>
+                            <input class="presInput" type="text" id="maxDose" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Kodun yazılacağı yer -->
+    </section>
+
+    <script src="js/menu.js"></script>
+    <script th:inline="javascript">
+/*<![CDATA[*/
+var loggedInUser = /*[[${personelNameSurname}]]*/ '';
+var clinicName = /*[[${clinicName}]]*/ '';
+
+document.querySelector(".loggedInUser").innerText = loggedInUser;
+document.querySelector(".clinicName").innerText = clinicName; // Tırnak hatası burada
+/*]]>*/
+</script>
+</body>
+
+</html>
