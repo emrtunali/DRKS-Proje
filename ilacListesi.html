@@ -54,8 +54,8 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="personelClinicName">Kardiyoloji</span>
+                    <span class="personelNameArea">Prof. Dr. Ahmet Acar</span>
+                    <span class="personelClinicNameArea">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -75,7 +75,7 @@
                         <a href="receteOlustur.html">
                             <i class="icon fa-solid fa-pen-to-square"></i>
 
-                            <span class="text nav-text">Reçete Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Reçete Oluştur</span>
                         </a>
                     </li>
 
@@ -109,14 +109,14 @@
                     <li class="nav-link">
                         <a href="raporOlustur.html">
                             <i class="icon fa-solid fa-paperclip"></i>
-                            <span class="text nav-text">Rapor Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Oluştur</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="raporSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
-                            <span class="text nav-text">Rapor Sorgula</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Sorgula</span>
                         </a>
                     </li>
 
@@ -143,7 +143,7 @@
                 <h1>Reçete Takip Sistemi İlaç Listesi</h1>
             </div>
         </div>
-
+        
         <div class="presSearch">
             <label for="">İlaç Adı:</label>
             <input style="margin-left: 20px;  width: 200px;" class="presInput" list="ilac">
@@ -155,12 +155,14 @@
                 <option value="Panadol">
                 <option value="Fermara">
             </datalist>
+            
             <button style="margin: 20px;" class="saveButton">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Ara
             </button>
+            
         </div>
-
+    
         <table class="table">
             <tr>
                 <th scope="col">#</th>

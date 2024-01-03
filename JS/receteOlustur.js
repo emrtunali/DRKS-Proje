@@ -1,99 +1,138 @@
-/*
-var sayac=1;
-function addDrug(){
 
-    if(sayac>2)
-    {
-        alert("Daha fazla ilaç eklenemez.");
-        const addButton = document.getElementById("addDrug");
-        addButton.style="background-color: darkred; cursor: default;";
-    }
-    else
-    {
-        const newHr = document.createElement("hr");
-        // Yeni ilaç öğelerini oluştur
-        const newDrug = document.createElement("div");
-        newDrug.className = "presMainDrug";
-        newDrug.innerHTML = `
-            <div class="input2">
-                <div class="input">
-                    <label for="">İlaç Adı</label>
-                    <input class="presInput" list="ilac">
-                    <datalist id="ilac">
-                        <option value="Parol">
-                        <option value="Arveles">
-                        <option value="Aspirin">
-                        <option value="Lustral">
-                        <option value="Panadol">
-                        <option value="Fermara">
-                    </datalist>
-                </div>
-                <div class="input">
-                    <label for="">Önerilen Doz</label>
-                    <input class="presInput" type="text" disabled>
-                </div>
-            </div>
-            <div class="input2">
-                <div class="input">
-                    <label for="">Yazılacak Doz</label>
-                    <input class="presInput" type="text">
-                </div>
-                <div class="input">
-                    <label for="">Maksimum Doz</label>
-                    <input class="presInput" type="text" disabled>
-                </div>
-            </div>
-        `;
-        // Drug-container'a ekleyin
-        const DrugContainer = document.querySelector(".presInfoDrug");
-        DrugContainer.appendChild(newHr);
-        DrugContainer.appendChild(newDrug);
-        sayac++;
-    }
-}
-*/
+var prescriptionRecorder = 0;
+var prescriptionIdArea = document.getElementById('prescriptionId');
 
-function saveThePrescription() {
+document.addEventListener("DOMContentLoaded", function() {
+    // Eğer prescriptionIdArea bir input alanı ise:
+    if (prescriptionIdArea) {
+        prescriptionIdArea.value = "RCT" + prescriptionRecorder;
+    }
+
+    // Eğer prescriptionIdArea bir metin alanı (div, span, vb.) ise:
+    // prescriptionIdArea.textContent = "RCT" + prescriptionRecorder;
+});
+
+
+
+
+function saveThePrescriptionButton(){
     var patientName = document.getElementById('patientNameInput').value;
     var clinicName = document.getElementById('clinicName').value;
     var personelName = document.getElementById('personelName').value;
     var drugName = document.getElementById('drugListInput').value;
-    var prescribedDose = document.getElementById('prescribedDose').value;
+    var drugPrescribedDose = document.getElementById('drugPrescribedDose').value;
+    var prescriptionDate = document.getElementById('prescriptionDate').value;
+    var prescriptionId = document.getElementById('prescriptionId').value;
+    var patientAge = document.getElementById('patientAge').value;
+    var patientId = document.getElementById('patientId').value;
+    var patientComplaint = document.getElementById('patientComplaint').value;
+    var drugRecommendedDose = document.getElementById('drugRecommendedDose').value;
+    var drugMaxDose = document.getElementById('drugMaxDose').value;
 
-    var saveThePrescriptionSqlQuerySentence =
-        "INSERT INTO prescriptions (prescriptionDate, patientId, clinicId, personelId, drugGroupId, drugPrescribedDose) " +
+    
+    var currentDate = new Date();
+    var currentHour = currentDate.getHours();
+
+    //Buradaki değerler veritabanından çekilecek?
+    var drugMinUseAge = "";
+    var personelRank = "";
+    var patientMeetingType = "";
+
+    if (
+        patientName == "" ||
+        clinicName == "" ||
+        personelName == "" ||
+        drugName == "" ||
+        drugPrescribedDose == "" ||
+        prescriptionDate == "" ||
+        prescriptionId == "" ||
+        patientAge == "" ||
+        patientId == "" ||
+        patientComplaint == "" ||
+        drugRecommendedDose == "" ||
+        drugMaxDose == "" ||
+        drugPrescribedDose == ""
+    ) 
+    {
+        alert("Tüm alanlar doldurulmalıdır.");
+    } 
+    else if(currentHour < 9 || currentHour > 17)
+    {
+        alert("Mesai saatleri dışında kayıt yapılamaz.");
+    }
+    else if(drugPrescribedDose > drugMaxDose)
+    {
+        alert("Maksimum doz değeri aşıldı. Oluşturduğunuz reçete yetkililer tarafından kontrol edilecek.");
+    }
+    else if(patientAge < drugMinUseAge)
+    {
+        alert("Hasta yaşı, ilacın kullanımına uygun değil. Oluşturduğunuz reçete yetkililer tarafından kontrol edilecek.");
+    }
+    else if(personelRank == "AİLE HEKİMİ")
+    {
+        if(patientMeetingType == "AİLE HEKİMİ")
+        {
+            var saveThePrescriptionSqlQuerySentence =
+            "INSERT INTO prescriptions (prescription_id, prescription_date, patient_id, clinic_id, personel_id, drugGroup_id, drug_prescribed_dose) " +
+            "VALUES (" +
+            "RCT" + prescriptionRecorder + ", " +
+            "CURRENT_DATE, " +
+            "(SELECT patient_id FROM patients WHERE patient_name_surname = '" + patientName + "'), " +
+            "(SELECT clinic_id FROM clinics WHERE clinic_name = 'AİLE HEKİMİ')), " +
+            "(SELECT personel_id FROM personels WHERE personel_name_surname =  '" + personelName + "'), " +
+            "(SELECT drugGroup_id FROM drug_groups WHERE drug_id = (SELECT drug_id from drugs WHERE drug_name = '" + drugName + "')), " +
+            "'" + prescribedDose + "')";
+
+            alert("Reçete başarıyla kaydedildi.");
+            prescriptionRecorder++;
+        }
+        else
+        {
+            alert("Bu hasta aile hekimliği randevusu almamış.");
+        }
+    }
+    else 
+    {
+        var saveThePrescriptionSqlQuerySentence =
+        "INSERT INTO prescriptions (prescription_id, prescription_date, patient_id, clinic_id, personel_id, drugGroup_id, drug_prescribed_dose) " +
         "VALUES (" +
+        "RCT" + prescriptionRecorder + ", " +
         "CURRENT_DATE, " +
-        "(SELECT patientId FROM patients WHERE patientNameSurname = '" + patientName + "'), " +
-        "(SELECT clinicId FROM clinics WHERE clinicName = (SELECT clinicName FROM personels WHERE personelNameSurname = '" + clinicName + "' )), " +
-        "(SELECT personelId FROM personels WHERE personelNameSurname =  '" + personelName + "'), " +
-        "(SELECT drugGroupId FROM drugGroups WHERE drugId = (SELECT drugName from drugs WHERE drugName = '" + drugName + "')), " +
+        "(SELECT patient_id FROM patients WHERE patient_name_surname = '" + patientName + "'), " +
+        "(SELECT clinic_id FROM clinics WHERE clinic_name = (SELECT clinic_name FROM personels WHERE personel_name_surname = '" + clinicName + "' )), " +
+        "(SELECT personel_id FROM personels WHERE personel_name_surname =  '" + personelName + "'), " +
+        "(SELECT drugGroup_id FROM drug_groups WHERE drug_id = (SELECT drug_id from drugs WHERE drug_name = '" + drugName + "')), " +
         "'" + prescribedDose + "')";
 
+        alert("Reçete başarıyla kaydedildi.");
+        prescriptionRecorder++;
+    }
 }
+
+
+
+
 
 function getDrugInfo() {
     var selectedDrug = document.getElementById('drugListInput').value;
-    if (!selectedDrug) 
-    {
-        return;
-    }
     
     var getDrugInfoSqlQuerySentence =
-        "SELECT drugs.drugRecommendedDose, drugs.drugMaxDose " +
+        "SELECT drugs.drug_recommended_dose, drugs.drug_max_dose " +
         "FROM drugs " +
-        "WHERE drugs.drugName = '" + selectedDrug + "'";
+        "WHERE drugs.drug_name = '" + selectedDrug + "'";
+
 
 }
 
 function getPatientInfo() {
-    var selectedPatientName = document.getElementById('patientNameInput').value;
-    var oturumSahibiAdıGelecek;
+    var selectedPatientId = document.getElementById('patientId').value;
 
     var getPatientInfoSqlQuerySentence =
-        "SELECT patients.patientId, patients.patientNameSurname, patients.patientAge, patients.patientComplaint " +
+        "SELECT patients.patient_name_surname, patients.patient_age, patients.patient_complaint " +
         "FROM patients " +
-        "JOIN meetings ON patients.patientId = meetings.patientId " +
-        "WHERE meetings.personelId = (SELECT personelId FROM personels WHERE personelNameSurname = '" + oturumSahibiAdıGelecek + "')";
+        "WHERE patients.patient_id = '" + selectedPatientId + "')";
+
 
 }
+
+

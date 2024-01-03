@@ -53,8 +53,8 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="personelClinicName">Kardiyoloji</span>
+                    <span class="personelNameArea">Prof. Dr. Ahmet Acar</span>
+                    <span class="personelClinicNameArea">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -74,7 +74,7 @@
                         <a href="receteOlustur.html">
                             <i class="icon fa-solid fa-pen-to-square"></i>
 
-                            <span class="text nav-text">Reçete Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Reçete Oluştur</span>
                         </a>
                     </li>
 
@@ -108,14 +108,14 @@
                     <li class="nav-link">
                         <a href="raporOlustur.html">
                             <i class="icon fa-solid fa-paperclip"></i>
-                            <span class="text nav-text">Rapor Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Oluştur</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="raporSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
-                            <span class="text nav-text">Rapor Sorgula</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Sorgula</span>
                         </a>
                     </li>
 
@@ -144,21 +144,22 @@
         </div>
 
         <div class="main">
+            <!--
             <div class="meetingButtons">
                 <div class="meetingButton">
-                    <a href="#" onclick="aileHekimiRandevu()">Aile Hekimi Randevusu Al</a>
-                    <!--
+                    <a href="#" onclick="aileHekimiRandevu()" id="aileHekimiRandevuAl">Aile Hekimi Randevusu Al</a>
+                    
                     <h5>Bağlı olduğunuz Aile Hekiminden randevu alın.</h5>
-                    -->
+                
                 </div>
                 <div class="meetingButton">
-                    <a href="#" onclick="hastaneRandevu()">Hastane Randevusu Al</a>
-                    <!--
+                    <a href="#" onclick="hastaneRandevu()" id="hastaneRandevuAl">Hastane Randevusu Al</a>
+                    
                     <h5>Klinik ve Doktorunuzu seçerek randevu alın.</h5>
-                    -->
+                    
                 </div>
             </div>
-        
+            -->
 
             <div class="presInfo">
                 <div class="title">
@@ -167,7 +168,7 @@
                         <h2>Randevu Bilgisi</h2>
                     </div>
                     <div class="save">
-                        <button class="saveButton">
+                        <button class="saveButton" onclick="saveTheMeetingButton()">
                             <i class="fa-regular fa-square-check"></i>
                             Randevuyu Kaydet
                         </button>
@@ -180,6 +181,7 @@
                             <label for="meetingDate">Randevu Tarihi</label>
                             <input class="presInput" id="meetingDate" type="date">
                         </div>
+                        <!--
                         <div class="input">
                             <label for="personels">Doktorlar</label>
                             <input class="presInput" list="personelList" id="personelListInput">
@@ -192,6 +194,7 @@
                                 <option value="Doktor 6">
                             </datalist>
                         </div>
+                        -->
                         <div class="input" id="clinicListDiv">
                             <label for="clinics">Klinikler</label>
                             <input class="presInput" list="clinicList" id="clinicListInput">
@@ -208,11 +211,21 @@
                     <div class="input2">
                         <div class="input">
                             <label for="meetingTime">Randevu Saati</label>
-                            <input class="presInput" id="meetingTime" type="time">
+                            <input class="presInput" id="meetingTime" list="meetingTimeList" onchange="validateMeetingTime()">
+                            <datalist id="meetingTimeList">
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <!-- Mola saati eklenebilir -->
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </datalist>
                         </div>
                         <div class="input">
                             <label for="meetingNo">Randevu No</label>
-                            <input class="presInput" type="text" id="meetingId" value="RND001" disabled>
+                            <input class="presInput" type="text" id="meetingId" value="" disabled>
                         </div>
                     </div>
                     
@@ -232,17 +245,17 @@
                     <div class="input2">
                         <div class="input">
                             <label for="patientNameSurname">Hasta Adı Soyadı</label>
-                            <input class="presInput" type="text" id="patientName" disabled>
+                            <input class="presInput" type="text" id="patientName">
                         </div>
                         <div class="input">
                             <label for="patientIdenificationNo">Hasta TC No</label>
-                            <input class="presInput" type="text" id="patientId" disabled>
+                            <input class="presInput" type="text" id="patientId">
                         </div>
                     </div>
                     <div class="input2">
                         <div class="input">
                             <label for="patientAge">Hasta Yaşı</label>
-                            <input class="presInput" type="text" id="patientAge" disabled>
+                            <input class="presInput" type="text" id="patientAge">
                         </div>
 
                         <div class="input">
@@ -256,6 +269,14 @@
     </div>
 
     </section>
+    <script>
+        var meetingIdArea = document.getElementById('meetingId');
+        document.addEventListener("DOMContentLoaded", function() {
+            if (meetingIdArea) {
+                meetingIdArea.value = "RND" + meetingRecorder;
+            }
+        });
+    </script>
     <script src="js/menu.js"></script>
 </body>
 

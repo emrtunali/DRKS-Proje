@@ -51,8 +51,8 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="personelClinicName">Kardiyoloji</span>
+                    <span class="personelNameArea">Prof. Dr. Ahmet Acar</span>
+                    <span class="personelClinicNameArea">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -72,7 +72,7 @@
                         <a href="receteOlustur.html">
                             <i class="icon fa-solid fa-pen-to-square"></i>
 
-                            <span class="text nav-text">Reçete Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Reçete Oluştur</span>
                         </a>
                     </li>
 
@@ -106,14 +106,14 @@
                     <li class="nav-link">
                         <a href="raporOlustur.html">
                             <i class="icon fa-solid fa-paperclip"></i>
-                            <span class="text nav-text">Rapor Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Oluştur</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="raporSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
-                            <span class="text nav-text">Rapor Sorgula</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Sorgula</span>
                         </a>
                     </li>
 
@@ -133,6 +133,7 @@
     </nav>
 
     <section class="home">
+        
         <div class="main-header">
             <i class="fa-solid fa-bars" id="hamburger" onclick="open1()"></i>
             <div class="headertext">
@@ -140,7 +141,10 @@
                 <h1>Reçete Takip Sistemi Rapor Oluştur</h1>
             </div>
         </div>
-
+        <div class="bakımda">
+            <h1>SAYFA BAKIM AŞAMASINDA</h1>
+        </div>
+        <!--
         <div class="info" id="info">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <div id="text"></div>
@@ -152,7 +156,6 @@
         </button>
 
         <div class="recipe-container">
-            <!-- Örnek Reçete -->
             <div class="recipe-item">
                 <h2>Reçete Tarihi: 01.01.2023</h2>
                 <br>
@@ -170,8 +173,8 @@
                 <button class="report-button" onclick="complain()">Reçeteyi Bildir</button>
             </div>
 
-            <!-- Daha fazla reçete eklemek için bu örneği çoğaltabilirsiniz -->
         </div>
+        -->
 
         <!-- Kodun yazılacağı yer -->
 

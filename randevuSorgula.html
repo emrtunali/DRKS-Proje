@@ -50,8 +50,8 @@
         <header>
             <div class="image-text">
                 <div class="text logo-text">
-                    <span class="name">Prof. Dr. Ahmet Acar</span>
-                    <span class="personelClinicName">Kardiyoloji</span>
+                    <span class="personelNameArea">Prof. Dr. Ahmet Acar</span>
+                    <span class="personelClinicNameArea">Kardiyoloji</span>
                 </div>
             </div>
         </header>
@@ -71,7 +71,7 @@
                         <a href="receteOlustur.html">
                             <i class="icon fa-solid fa-pen-to-square"></i>
 
-                            <span class="text nav-text">Reçete Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Reçete Oluştur</span>
                         </a>
                     </li>
 
@@ -105,14 +105,14 @@
                     <li class="nav-link">
                         <a href="raporOlustur.html">
                             <i class="icon fa-solid fa-paperclip"></i>
-                            <span class="text nav-text">Rapor Oluştur</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Oluştur</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="raporSorgula.html">
                             <i class="icon fa-solid fa-magnifying-glass"></i>
-                            <span class="text nav-text">Rapor Sorgula</span>
+                            <span class="text nav-text" id="onlyPersonelArea">Rapor Sorgula</span>
                         </a>
                     </li>
 
@@ -144,7 +144,7 @@
 
             <p>* Aktif bulunan alanlardan herhangi birine değer girerek sorgulama yapabilirsiniz.</p>
 
-            <button style="margin: 20px;" class="saveButton">
+            <button style="margin: 20px;" class="saveButton" onclick="meetingQuery">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Sorgula
             </button>
@@ -172,7 +172,7 @@
                     <div class="input2">
                         <div class="input">
                             <label for="meetingDate">Randevu Tarihi</label>
-                            <input class="presInput" type="date" id="meetingDate">
+                            <input class="presInput" type="date" id="meetingDate" disabled>
                         </div>
                         <div class="input">
                             <label for="meetingNo">Randevu No</label>
@@ -182,7 +182,7 @@
                     <div class="input2">
                         <div class="input">
                             <label for="meetingTime">Randevu Saati</label>
-                            <input class="presInput" id="meetingTime" type="time">
+                            <input class="presInput" id="meetingTime" type="time" disabled>
                         </div>
                         <div class="input">
                             <label for="clinics">Klinikler</label>
@@ -197,10 +197,11 @@
                             </datalist>
                         </div>
                     </div>
+                    <!--
                     <div class="input2">
                         <div class="input">
                             <label for="personels">Doktorlar</label>
-                            <input class="presInput" list="personelList" id="personelList">
+                            <input class="presInput" list="personelList" id="personelList" disabled>
                             <datalist id="personelList">
                                 <option value="Doktor 1">
                                 <option value="Doktor 2">
@@ -211,6 +212,7 @@
                             </datalist>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
 
